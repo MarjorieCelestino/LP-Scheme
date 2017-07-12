@@ -12,7 +12,7 @@
 ;condição - caso verdadeira - demais casos
         (m (if (< mes 3) (+ mes 10) (- mes 2)))
         (d dia)
-        (a (modulo ano 100))
+        (a (mod ano 100))
         (s (floor (/ ano 100)))
          )
          (let (
