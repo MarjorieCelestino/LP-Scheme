@@ -1,24 +1,16 @@
 ;define: define nomes globais ou funções
 ;lambda: define os parâmetros das funções
-(define mint (lambda (m) (/ (- (* 13 m) 1) 5)))
+;quotient retorna o quociente da divisão
+(define mint (lambda (m) (quotient (- (* 13 m) 1) 5)))
 
-(define aint (lambda (a) (/ a 4)))
+(define aint (lambda (a) (quotient a 4)))
 
-(define sint (lambda (s) (/ s 4)))
+(define sint (lambda (s) (quotient s 4)))
 
-(define (dia-da-semana dia mes ano)
-;let: faz cálculo das expressões e cria ambiente local antes de fazer cálculo do corpo
-    (let (
-;condição - caso verdadeira - demais casos
-        (m (if (< mes 3) (+ mes 10) (- mes 2)))
-        (d dia)
-        (a (mod ano 100))
-        (s (floor (/ ano 100)))
-         )
-         (let (
-          (x (- (+ (mint m) (aint a) (sint s) d a) (* 2 s)))
-;case: para definir dia da semana
-          (case (modulo x 7)
+(define x (lambda (d m a s) (- (+ (mint m) (aint a) (sint s) d a) (* 2 s))))
+
+;remainder retorna o resto inteiro da divisão
+(define diaSemana (lambda (x) (case (remainder x 7)
             ((0) (diaSemana "Domingo"))
             ((1) (diaSemana "Segunda-feira"))
             ((2) (diaSemana "Terça-feira"))
@@ -26,9 +18,18 @@
             ((4) (diaSemana "Quinta-feira"))
             ((5) (diaSemana "Sexta-feira"))
             ((6) (diaSemana "Sábado"))
-            (else (diaSemana "Dia inválido.")))
-          )
-          (print "Dia da semana: " diaSemana ".")
-         )
+            (else (diaSemana "Dia inválido.")))))
+
+(define dia-da-semana (lambda (dia mes ano)
+        (let (
+              ;condição - caso_verdade - demais_casos
+              (m (if (< mes 3) (+ mes 10) (- mes 2)))
+              (d dia)
+              (a (remainder ano 100))
+              (s (quotient ano 100)) 
+             )
+              (x d m a s)
+              (print "Dia da semana: " (diaSemana x) ".")
+        )        
     )
 )
