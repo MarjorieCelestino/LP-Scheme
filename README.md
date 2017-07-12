@@ -1,4 +1,4 @@
-# Exercícos LP
+# Exercícios LP
 
 Resolução dos exercícios da matéria de Linguagens de Programação.
 
