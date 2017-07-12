@@ -2,6 +2,6 @@
 
 Resolução dos exercícios da matéria de Linguagens de Programação.
 
-* Linguagem de programação: Scheme
+* Linguagens utilizadas: Scheme e Prolog
 
 _Universidade Federal de Goiás - Engenharia de Software_
