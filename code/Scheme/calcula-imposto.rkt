@@ -9,7 +9,7 @@
 (define baseD (lambda () (* (- 55976.16 45012.61) 0.225)))
 ;define calculo do montante de acordo com a base do salário
 (define calculaMontante (lambda (salario base porcentagem) (* (- salario base) porcentagem)))
-;cálculo total
+;cálculo total do montante base atual e demais bases
 (define calculaTotal (lambda (montante baseb basec based) (+ montante baseb basec based)))
 ;salario-basemenor*porcentagem
 (define defineBase (lambda (salario)
